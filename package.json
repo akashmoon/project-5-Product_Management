@@ -1,0 +1,24 @@
+{
+  "name": "productmanagement_project5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1241.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.0",
+    "multer": "^1.4.5-lts.1",
+    "node-modules": "^0.0.1",
+    "nodemon": "^2.0.20",
+    "pincode-validator": "^1.0.3"
+  }
+}
