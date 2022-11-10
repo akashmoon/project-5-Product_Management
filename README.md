@@ -1,18 +1,21 @@
 Project - Products Management
 --> Key points
-In this project we will work feature wise. That means we pick one object like a user, book, blog, etc at a time. We work through its features. The steps would be:
+In this project we will work feature wise. We work through its features. The steps would be:
+
 1. We create its model.
 2. We build its APIs.
 3. We test these APIs.
 4. We deploy these APIs.
 5. We integrate these APIs with frontend.
+
 We will repeat steps from Step 1 to Step 5 for each feature in this project.
 This project is divided into 4 features namely User, Product, Cart and Order. You need to work on a single feature at a time. Once that is completed as per above mentioned steps. You will be instructed to move to the next Feature.
 In this project we are changing how we send a token with a request. Instead of using a custom header key like x-api-key, you need to use Authorization header and send the JWT token as Bearer token.
 Create a group database groupXDatabase. You can clean the db you previously used and reuse the same.
 This time each group should have a single git branch. Coordinate amongst yourselves by ensuring every next person pulls the code last pushed by a team mate. Your branch will be checked as part of the demo. Branch name should follow the naming convention project/productsManagementGroupX
 Follow the naming conventions exactly as instructed.
---> FEATURE I - User
+
+-----------------------------------> FEATURE I - User ---------------------------------------------------------->------------------------------------->
 Models
 User Model
 { 
@@ -37,6 +40,8 @@ User Model
   createdAt: {timestamp},
   updatedAt: {timestamp}
 }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 User APIs
 POST /register
 Create a user document from request body. Request body must contain image.
@@ -73,6 +78,8 @@ On error - Return a suitable error message with a valid HTTP status code. The re
         "__v": 0
     }
 }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 POST /login
 Allow an user to login with their email and password.
 On a successful login attempt, return the userId and a JWT token containing the userId, exp, iat.
@@ -88,6 +95,7 @@ On error - Return a suitable error message with a valid HTTP status code. The re
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTYyODc2YWJkY2I3MGFmZWVhZjljZjUiLCJpYXQiOjE2MzM4NDczNzYsImV4cCI6MTYzMzg4MzM3Nn0.PgcBPLLg4J01Hyin-zR6BCk7JHBY-RpuWMG_oIK7aV8"
     }
 }
+
 GET /user/:userId/profile (Authentication required)
 Allow an user to fetch details of their profile.
 Make sure that userId in url param and in token is same
@@ -122,6 +130,8 @@ On error - Return a suitable error message with a valid HTTP status code. The re
         "__v": 0
     }
 }
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 PUT /user/:userId/profile (Authentication and Authorization required)
 Allow an user to update their profile.
 A user can update all the fields
@@ -158,7 +168,8 @@ On error - Return a suitable error message with a valid HTTP status code. The re
     }
 }
 Note: Bcrypt Send form-data
-FEATTURE II - Product
+
+------------------------------------------------------------> FEATTURE II - Product -------------------------------------------->---------------------------------->
 Models
 Product Model
 { 
@@ -211,8 +222,10 @@ DELETE /products/:productId
 Deletes a product by product id if it's not already deleted
 Response format
 On success - Return HTTP status 200. The response should be a JSON object like this
-On error - Return a suitable error message with a valid HTTP status code. The response should be a JSON object like this
-FEATURE III - Cart
+On error - Return a suitable error message with a valid HTTP status code. The response should be a JSON object like this.
+
+
+-------------------------------------------------------- || FEATURE III - Cart  || --------------------------------------------------------------------------------
 Models
 Cart Model
 {
@@ -272,8 +285,8 @@ cart deleting means array of items is empty, totalItems is 0, totalPrice is 0.
 Response format
 On success - Return HTTP status 204. Return a suitable message. The response should be a JSON object like this
 On error - Return a suitable error message with a valid HTTP status code. The response should be a JSON object like this
-FEATURE IV - Order
-Models
+---------------------------------------------------------|| FEATURE IV - Order Models || -------------------------------------------------------------------------
+
 Order Model
 {
   userId: {ObjectId, refs to User, mandatory},
@@ -315,9 +328,10 @@ To test these apis create a new collection in Postman named Project 5 Shopping C
 Each api should have a new request in this collection
 Each request in the collection should be rightly named. Eg Create user, Create product, Get products etc
 Each member of each team should have their tests in running state
-Refer below sample 
+Refer below sample -->
 Response
 Successful Response structure
+
 {
   status: true,
   message: 'Success',
@@ -330,6 +344,7 @@ Error Response structure
   status: false,
   message: ""
 }
+
 Collections
 users
 {
@@ -355,6 +370,7 @@ users
   createdAt: "2021-09-17T04:25:07.803Z",
   updatedAt: "2021-09-17T04:25:07.803Z",
 }
+
 products
 {
   _id: ObjectId("88abc190ef0288abc190ef55"),
